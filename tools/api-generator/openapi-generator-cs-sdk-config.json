@@ -1,0 +1,6 @@
+{
+  "modelPropertyNaming": "camelCase",
+  "supportsES6": false,
+  "npmName": "sdk",
+  "withInterfaces": true
+}

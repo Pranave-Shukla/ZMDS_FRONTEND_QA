@@ -1,0 +1,15 @@
+.CustomerDetailsTextArea {
+  height: 165px;
+  overflow-y: scroll;
+  resize: none;
+}
+
+.textarea.error {
+  border: rgb(187, 68, 53) solid 1px;
+}
+
+.errorMsg {
+  color: rgb(187, 68, 53);
+  font-size: small;
+  text-align: right;
+}

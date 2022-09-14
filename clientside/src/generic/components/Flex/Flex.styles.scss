@@ -1,0 +1,56 @@
+@import 'generic/styles/colors.scss';
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.alignItemsEnd {
+  align-items: flex-end;
+}
+
+.alignItemsStart {
+  align-items: flex-start;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.justifyFlexEnd {
+  justify-content: flex-end;
+}
+
+.justifySpaceEvenly {
+  justify-content: space-evenly;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.flexBorderSolidRed {
+  border: 1px solid $color-cardinal;
+}
+
+%borderSolidSilver {
+  border-color: $color-silver;
+  border-style: solid;
+}
+
+.flexBorderBottomSolidSilver {
+  @extend %borderSolidSilver;
+  border-width: 0 0 1px;
+}
+
+.flexBorderBottomRightSolidSilver {
+  @extend %borderSolidSilver;
+  border-width: 0 1px 1px 0;
+}

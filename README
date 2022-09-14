@@ -1,0 +1,14 @@
+ZDMS
+
+Required Node.js version: 16.9.1
+Command to bootstrap enviroment: npm run bootstrap
+Extended manual on how to prepare dev enviroment: /tools/clientside-bootstrap/README
+
+
+
+
+ZDMS
+
+Wymagana wersja Node.js: 16.9.1
+Polecenie bootstrap'ujące środowisko: npm run bootstrap
+Rozbudowana instrukacja przygotowania środowiska developerskiego: /tools/clientside-bootstrap/README

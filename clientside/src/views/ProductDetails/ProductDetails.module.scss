@@ -1,0 +1,109 @@
+.ProductDetailsHeader {
+  padding: 30px 30px 20px 0px;
+  width: 50%;
+}
+
+.ProductDetailsInputWrapper {
+  float: right;
+  margin: 0;
+  width: 400px;
+}
+
+.ProductDetailsRowWithInput {
+  display: table-row;
+  height: 30px;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.ProductDetailsFrame {
+  border: 1px solid rgb(187, 187, 187);
+  display: table;
+  padding: 30px 60px 0 0;
+}
+
+.ProductDetailsUploadInput {
+  display: none;
+}
+
+.ProductDetailsUploadButton {
+  appearance: none;
+  background-clip: padding-box;
+  border: 1px solid rgb(206, 212, 218);
+  border-radius: 0.25rem;
+  color: rgb(33, 37, 41);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ProductDetailsImageInputWrapper {
+  margin: 5px 0 40px 0;
+}
+
+.ProductDetailsRemoveImage {
+  cursor: pointer;
+  position: relative;
+}
+
+.ProductDetailsRemoveImage:after {
+  bottom: 5px;
+  content: '\00d7';
+  display: inline-block;
+  font-size: 22px;
+  left: 375px;
+  position: absolute;
+}
+
+.ProductDetails {
+  padding: 10px 30px 30px 0;
+  width: 100%;
+}
+
+.ProductDetailsTitle {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  margin: 0;
+}
+
+.ProductDetailsTitleWrapper {
+  float: left;
+  margin: 0;
+  text-align: center;
+  width: 250px;
+}
+
+.ProductDetailsButtons {
+  margin-top: 15px;
+}
+
+.ProductDetailsWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 100%;
+  @media (max-width: 1200px) {
+    grid-template-columns: auto;
+  }
+}
+
+.ProductDetailsImgPreviewWrapper {
+  max-width: 100%;
+  padding: 10px 30px 30px 0;
+}
+
+.ProductDetailsImgPreviewFrame {
+  border: 1px solid rgb(187, 187, 187);
+  max-width: 100%;
+  padding: 30px;
+}
+
+.ProductDetailsImgPreview {
+  max-width: 100%;
+}
