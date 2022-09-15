@@ -31,8 +31,8 @@ jobs:
     - run: npm run build 
       working-directory: clientside
       
-    - name: Share artifact inside workflow
-    - uses: actions/upload-artifact@v1
-      with:
-          name: react-github-actions-build
+    - name:  Use the Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with: 
+          name: assets-for-download
           path: build
