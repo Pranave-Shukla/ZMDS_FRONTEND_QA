@@ -1,4 +1,4 @@
 export const DETAILS_BUTTONS_LABELS = {
-  ABORT: 'Abbrechen',
+  ABORT: 'Abbreche',
   SAVE: 'Speichern',
 }
