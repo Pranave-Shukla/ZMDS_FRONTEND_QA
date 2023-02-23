@@ -1,8 +1,0 @@
-extends:
-  - stylelint-prettier/recommended
-plugins:
-  - stylelint-prettier
-  - stylelint-order
-rules:
-  order/properties-alphabetical-order: error
-  color-no-hex: true
