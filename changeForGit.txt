@@ -1,6 +1,0 @@
-remove given line from package.json file
-
-"repository": {
-    "type": "git",
-    "url": "ssh://mhoffmann@gerrit.bluesoft.com:29418/ZOETIS/ZMDS_FRONTEND"
-  },
