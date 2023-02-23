@@ -1,0 +1,23 @@
+{
+  "editor.minimap.enabled": true,
+  "editor.lineNumbers": "on",
+  "editor.fontFamily": "Fira Code", // https://github.com/tonsky/FiraCode
+  "editor.fontLigatures": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.cache": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  "files.eol": "\n", // WAŻNE!
+  "typescript.tsdk": "./clientside/node_modules/typescript/lib", // WAŻNE
+  "git.ignoreLimitWarning": true, // WAŻNE!
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true, // WAŻNE!
+    "source.fixAll.eslint": true // WAŻNE!
+  },
+  "javascript.preferences.useAliasesForRenames": false, // WAŻNE!
+  "typescript.preferences.useAliasesForRenames": false, // WAŻNE!
+  "files.autoSave": "off",
+  "java.configuration.updateBuildConfiguration": "disabled" // WAŻNE!
+}

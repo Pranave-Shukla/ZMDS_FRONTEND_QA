@@ -1,0 +1,15 @@
+:global(.rmsc .dropdown-container .dropdown-heading) {
+  height: 22px;
+}
+
+:global(.rmsc .dropdown-content) {
+  width: fit-content !important;
+}
+
+:global(.rmsc .options) {
+  max-height: 320px !important;
+}
+
+:global(.rmsc .dropdown-heading-value) {
+  color: rgb(170, 170, 170);
+}

@@ -1,0 +1,17 @@
+{
+  "name": "zdms",
+  "version": "1.0.0",
+  "description": "Wrapper project for Zooetis products and clients clientside",
+  "main": "",
+  "scripts": {
+    "bootstrap": "pushd tools/api-generator > /dev/null && npm i && ./gen_sdk.sh && popd > /dev/null && cd clientside && npm i",
+    "srv:dev": "cd clientside && npm run srv:dev",
+    "srv:mock": "cd clientside && npm run srv:mock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://mhoffmann@gerrit.bluesoft.com:29418/ZOETIS/ZMDS_FRONTEND"
+  },
+  "author": "Bluesoft",
+  "license": "ISC"
+}

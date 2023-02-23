@@ -1,0 +1,63 @@
+How to prepare dev enviroment for clientSide on a freashly cloned repository:
+
+██████╗  ██████╗  ██████╗ ████████╗███████╗████████╗██████╗  █████╗ ██████╗
+██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+██████╔╝██║   ██║██║   ██║   ██║   ███████╗   ██║   ██████╔╝███████║██████╔╝
+██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝
+██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║
+╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝
+
+
+($ROOT - main directory of the project)
+
+1. For Windows users - set git-bash as shell used by npm:
+npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"
+(if x86 architecture: npm config set script-shell "C:\\Program Files (x86)\\git\\bin\\bash.exe")
+2. For Linux users - extend max filex watches limit:
+echo "fs.inotify.max_user_watches=524288" | tee -a /etc/sysctl.conf
+3. Make sure git did not break end of line character while copying repository. Verify flag:
+'git config --global core.autocrlf'. Should be set to false, otherwise set the flag to false and copy the repository again.
+4. Make sure you are on fresh development branch.
+5. For Visual Studio Code users, copy directory $ROOT/tools/clientside-bootstrap/vscode/.vscode do $ROOT/.vscode.
+(keys marked as 'WAŻNE!' should not be modified. All other can be modified as per preferences)
+6. Make sure the node being used is version 16.9.1
+7. Install api-generator by running script $ROOT/tools/api-generator/init.sh
+8. Generate sdk library by running $ROOT/tools/api-generator/gen_sdk.sh
+9. Change directory to $ROOT/clientside, and download dependencies by running 'npm i'
+10. Install Visual Studio Code extensions according to the document $ROOT/clientside/doc/vscode
+11. While in $ROOT/clientside, run dev server 'npm run srv:dev'
+12. While in $ROOT/clientside, run mock server 'npm run srv:mock'
+13. Install Google Chrom with extensions: React Developer Tools
+
+
+
+
+Kroki przygotowawcze środowiska developerskiego dla warstwy 'clientSide' na świeżo sklonowanym repozytorium:
+
+██████╗  ██████╗  ██████╗ ████████╗███████╗████████╗██████╗  █████╗ ██████╗
+██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+██████╔╝██║   ██║██║   ██║   ██║   ███████╗   ██║   ██████╔╝███████║██████╔╝
+██╔══██╗██║   ██║██║   ██║   ██║   ╚════██║   ██║   ██╔══██╗██╔══██║██╔═══╝
+██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████║   ██║   ██║  ██║██║  ██║██║
+╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝
+
+($ROOT - oznacza główny katalog z kodem projektu)
+
+1. Dla użytkowników Windows - Ustawić git-bash'a jako shell'a używanego przez npm:
+npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"
+(w architekturze x86: npm config set script-shell "C:\\Program Files (x86)\\git\\bin\\bash.exe")
+2. Dla użytkowników dystrybucji Linux - zwiększyć limit ilości nasłuchiwanych plików:
+echo "fs.inotify.max_user_watches=524288" | tee -a /etc/sysctl.conf
+3. Upewnić się, że git podczas klonowanianie nie zepsuł znaków końca linii. Zweryfikować flagę uruchamiając
+'git config --global core.autocrlf'. Powinna być ustawiona na false. W p.p. ustawić flagę i ponowić klonowanie.
+4. Upewnić się, że jest to aktualny branch developerski.
+5. Dla użytkowników Visual Studio Code, skopiować katalog $ROOT/tools/clientside-bootstrap/vscode/.vscode do $ROOT/.vscode.
+(klucze oznaczone jako 'WAŻNE!' nie powinny być modyfikowane. Pozostałe można modyfikować wedle preferencji)
+6. Upewnić się, że w systemie wykorzystywany jest node w wersji 16.9.1
+7. Zainstalować api-generator uruchamiając skrypt $ROOT/tools/api-generator/init.sh
+8. Wygenerować biliotekę sdk uruchamiając $ROOT/tools/api-generator/gen_sdk.sh
+9. Przejść do $ROOT/clientside, pobrać zależności zewnętrzne clientside komendą 'npm i'
+10. Zainstalować rozszerzenia dla Visual Studio Code zgodnie z dokumentem $ROOT/clientside/doc/vscode
+11. Będąc w $ROOT/clientside, uruchomić serwer developerski komendą 'npm run srv:dev'
+12. Będąc w $ROOT/clientside, uruchomić server zaślepkowy komendą 'npm run srv:mock'
+13. Zainstalować przeglądarkę Google Chrome i rozszerzenia do niej: React Developer Tools

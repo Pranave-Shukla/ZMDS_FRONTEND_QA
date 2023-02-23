@@ -1,0 +1,22 @@
+:global(.react-datepicker-wrapper) {
+  display: block;
+}
+
+:global(.react-datepicker__input-container) {
+  display: block;
+  line-height: 14px;
+  input[type='text'] {
+    border: solid 1px rgb(202, 202, 202);
+    border-radius: 4px;
+    max-width: 100%;
+  }
+}
+
+:global(.react-datepicker__month-container) {
+  line-height: 25px;
+}
+
+:global(.react-datepicker__day) {
+  line-height: 1.4rem !important;
+  margin: 0.1rem;
+}

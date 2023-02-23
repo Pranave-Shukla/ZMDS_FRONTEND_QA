@@ -1,0 +1,15 @@
+export const PRODUCT_DETAILS_LABELS = {
+  APPLY_TO_ALL: 'Apply to All',
+  AVAILABILITY: 'Verfügbarkeit Status',
+  CONTEXT: 'Context',
+  DESCRIPTION: 'Artikelbeschreibung',
+  IMAGE_NAME: 'Image name',
+  IS_VISIBLE: 'Anzeige Webshop',
+  LIST_PRICE: 'Listenpreis',
+  MAX_ORDER: 'Max. Menge',
+  MIN_ORDER: 'Min. Menge',
+  NAME: 'Name',
+  PRODUCTS_LIST: 'Verwandte Artikel',
+  PRODUCT_ID: 'Artikelnummer',
+  SOURCE: 'Plattform',
+}

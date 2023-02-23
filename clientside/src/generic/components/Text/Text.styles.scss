@@ -1,0 +1,188 @@
+@import 'generic/styles/colors.scss';
+
+.text {
+  white-space: pre-line;
+}
+
+.wrap {
+  word-break: break-all; /* potrzebne dla przeglądarki Edge - ta nie obsługuje break-word */
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.error {
+  color: $color-punch;
+  font-size: 10px;
+}
+
+.fieldValue {
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+.blue12 {
+  color: $color-eastern-blue;
+  font-size: 12px;
+}
+
+.blue13 {
+  color: $color-eastern-blue;
+  font-size: 13px;
+}
+
+.normal11 {
+  font-size: 11px;
+}
+
+.normal12 {
+  font-size: 12px;
+}
+
+.normal13 {
+  font-size: 13px;
+}
+
+.normal15 {
+  font-size: 15px;
+}
+
+.bold10 {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.bold14 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bold12 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bold16 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dark16 {
+  color: $color-outer-space;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.darkBold13 {
+  color: $color-outer-space;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.boldWhite12 {
+  color: $color-white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.boldWhite14 {
+  color: $color-white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.darkGray10 {
+  color: $color-nevada;
+  font-size: 10px;
+}
+
+.gray12 {
+  color: $color-nevada;
+  font-size: 12px;
+}
+
+.gray14 {
+  color: $color-nevada;
+  font-size: 14px;
+}
+
+.darkGray9 {
+  color: $color-nevada;
+  font-size: 9px;
+}
+
+.lightGray12 {
+  color: $color-dusty-gray;
+  font-size: 12px;
+}
+
+.lightGray16 {
+  color: $color-dusty-gray;
+  font-size: 16px;
+}
+
+.lightGreen12 {
+  color: $color-pastel-green;
+  font-size: 12px;
+}
+
+.darkGray12 {
+  color: $color-nevada;
+  font-size: 12px;
+}
+
+.boldRed12 {
+  color: $color-punch;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.red16 {
+  color: $color-punch;
+  font-size: 16px;
+}
+
+.red10 {
+  color: $color-punch;
+  font-size: 10px;
+}
+
+.red12 {
+  color: $color-punch;
+  font-size: 12px;
+}
+
+.boldRed16 {
+  @extend .red16;
+  font-weight: 900;
+}
+
+.italicLightGray10 {
+  color: $color-silver-nobel;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.green12 {
+  color: $color-malachite;
+  font-size: 12px;
+}
+
+.boldGreen12 {
+  @extend .green12;
+  font-weight: bold;
+}
+
+.boldYellow12 {
+  color: $color-sunny-yellow;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.orange12 {
+  color: $color-orange;
+  font-size: 12px;
+}
+
+.alignRight {
+  text-align: right;
+}

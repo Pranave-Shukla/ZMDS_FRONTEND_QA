@@ -1,0 +1,1522 @@
+openapi: 3.0.3
+info:
+  title: ZMDS API documentation
+  description: API documentation
+  version: 1.0.0
+paths:
+  /api/v1/customers:
+    post:
+      tags:
+        - customer
+      summary: Customers list
+      operationId: getCustomers
+      requestBody:
+        description: Get customers request parameters
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/CustomersRequest"
+      responses:
+        '200':
+          description: A paged list of customers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomersResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/customers/{id}:
+    get:
+      tags:
+        - customer
+      summary: Customer details
+      operationId: getCustomerDetails
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Customer ID
+      responses:
+        '200':
+          description: Customer details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerDetailsResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/customer-lookups/{id}:
+    get:
+      tags:
+        - customerLookup
+      summary: Customer lookup
+      operationId: getCustomerLookup
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Customer ID
+      responses:
+        '200':
+          description: Customer lookup
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerLookupResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      tags:
+        - customer
+      summary: Customer details update
+      operationId: updateCustomer
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Customer ID
+      requestBody:
+        description: Updated customer
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/CustomerPartialRequest"
+      responses:
+        '204':
+          description: Customer details successfully updated
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/source-systems:
+    get:
+      tags:
+        - sourceSystem
+      summary: Source system list
+      operationId: getSourceSystems
+      responses:
+        '200':
+          description: Source system list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SourceSystemsResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/products:
+    post:
+      tags:
+        - product
+      summary: Products list
+      operationId: getProducts
+      requestBody:
+        description: Get products request parameters
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/ProductsRequest"
+      responses:
+        '200':
+          description: A paged list of products
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductsResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/products/{id}:
+    get:
+      tags:
+        - product
+      summary: Product details
+      operationId: getProductDetails
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: product ID
+        - in: query
+          name: statusId
+          schema:
+            type: string
+          required: true
+          description: product status ID
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductDetailsResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    patch:
+      tags:
+        - product
+      summary: Product details update
+      operationId: updateProduct
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Customer ID
+        - in: query
+          name: statusId
+          schema:
+            type: string
+          required: true
+          description: Product status context
+        - in: query
+          name: applyForAllSystems
+          schema:
+            type: boolean
+            default: false
+          description: Tells if apply changes to all systems in product context
+      requestBody:
+        description: Updated product
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductPartialRequest"
+      responses:
+        '204':
+          description: Product details successfully updated
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/dictionaries:
+    get:
+      tags:
+        - dictionary
+      summary: Dictionary list
+      operationId: getDictionaries
+      parameters:
+        - in: query
+          name: language
+          required: true
+          schema:
+            $ref: "#/components/schemas/Language"
+      responses:
+        '200':
+          description: Dictionary list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DictionariesResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/audits:
+    post:
+      tags:
+        - audit
+      summary: Audit list
+      operationId: getAudits
+      requestBody:
+        description: Get audits request parameters
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "#/components/schemas/AuditsRequest"
+      responses:
+        '200':
+          description: Audits list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuditsResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/users/me:
+    get:
+      tags:
+        - user
+      summary: Authenticated user details
+      operationId: getAuthenticatedUser
+      responses:
+        '200':
+          description: Authenticated user details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticatedUserResponse"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    ProductsRequest:
+      type: object
+      required:
+        - sortBy
+        - sortDirection
+        - language
+      properties:
+        pageSize:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 10
+        pageNumber:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 0
+        sortBy:
+          $ref: "#/components/schemas/SortProductsBy"
+        sortDirection:
+          $ref: "#/components/schemas/SortDirection"
+        filters:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchProductsBy"
+          uniqueItems: true
+        language:
+          $ref: "#/components/schemas/Language"
+    ProductsResponse:
+      type: object
+      properties:
+        pageInfo:
+          $ref: "#/components/schemas/PageInfo"
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"
+          example:
+          - id: "123"
+            statusId: "1"
+            isVisible: "FALSE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "FALSE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+          - id: "123"
+            statusId: "1"
+            isVisible: "TRUE"
+            availability: "SHORT_TERM_NOT_AVAILABLE"
+            description: "some desc"
+            minimumOrderQuantity: 5
+            maximumOrderQuantity: 500
+            hasMedia: "FALSE"
+            sourceSystem: { name: 'Heiland' }
+    CustomerPartialRequest:
+      type: object
+      properties:
+        customerPartial:
+          $ref: "#/components/schemas/CustomerPartial"
+      required:
+        - customerPartial
+    ProductPartialRequest:
+      type: object
+      properties:
+        productPartial:
+          $ref: "#/components/schemas/ProductPartial"
+      required:
+        - productPartial
+    AuditsRequest:
+      type: object
+      required:
+        - sortBy
+        - sortDirection
+      properties:
+        pageSize:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 10
+        pageNumber:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 0
+        sortBy:
+          $ref: "#/components/schemas/SortAuditsBy"
+        sortDirection:
+          $ref: "#/components/schemas/SortDirection"
+        filters:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchAuditsBy"
+          uniqueItems: true
+    CustomersRequest:
+      type: object
+      required:
+        - sortBy
+        - sortDirection
+        - language
+      properties:
+        pageSize:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 10
+        pageNumber:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 0
+        sortBy:
+          $ref: "#/components/schemas/SortCustomersBy"
+        sortDirection:
+          $ref: "#/components/schemas/SortDirection"
+        filters:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchCustomersBy"
+          uniqueItems: true
+        language:
+          $ref: "#/components/schemas/Language"
+    CustomerPartial:
+      type: object
+      properties:
+        nativeStatus:
+          $ref: "#/components/schemas/CustomerNativeStatus"
+        rejectionReason:
+          $ref: "#/components/schemas/RejectionReason"
+        freeText:
+          type: string
+          maxLength: 127
+    ProductPartial:
+      type: object
+      properties:
+        isVisible:
+          $ref: "#/components/schemas/NullableBooleanValue"
+        availability:
+          $ref: "#/components/schemas/NullableProductAvailability"
+        minimumOrderQuantity:
+          type: integer
+          format: int32
+          nullable: true
+        maximumOrderQuantity:
+          type: integer
+          format: int32
+          nullable: true
+        associatedProducts:
+          type: string
+          nullable: true
+        image:
+          type: string
+          format: base64
+          nullable: true
+        imageFilename:
+          type: string
+          nullable: true
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+        erpId:
+          type: string
+        type:
+          $ref: "#/components/schemas/CustomerType"
+        nativeStatus:
+          $ref: "#/components/schemas/CustomerNativeStatus"
+        companyName:
+          type: string
+        address:
+          type: string
+        state:
+          $ref: "#/components/schemas/CustomerState"
+        nativeCreatedDate:
+          type: string
+          format: date-time
+        sourceSystem:
+          $ref: "#/components/schemas/SourceSystem"
+        rejectionReason:
+          $ref: "#/components/schemas/RejectionReason"
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        statusId:
+          type: string
+        isVisible:
+          $ref: "#/components/schemas/BooleanValue"
+        availability:
+          $ref: "#/components/schemas/ProductAvailability"
+        description:
+          type: string
+        minimumOrderQuantity:
+          type: integer
+          format: int32
+        maximumOrderQuantity:
+          type: integer
+          format: int32
+        hasMedia:
+          $ref: "#/components/schemas/BooleanValue"
+        sourceSystem:
+          $ref: "#/components/schemas/SourceSystem"
+    CustomerDetails:
+      type: object
+      properties:
+        id:
+          type: string
+        erpId:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nativeId:
+          type: string
+        title:
+          type: string
+        companyName:
+          type: string
+        streetAddress:
+          type: string
+        postalCode:
+          type: string
+        countryCode:
+          type: string
+        city:
+          type: string
+        type:
+          $ref: "#/components/schemas/CustomerType"
+        nativeStatus:
+          $ref: "#/components/schemas/CustomerNativeStatus"
+        state:
+          $ref: "#/components/schemas/CustomerState"
+        nativeCreatedDate:
+          type: string
+          format: date-time
+        sourceSystem:
+          $ref: "#/components/schemas/SourceSystem"
+        rejectionReason:
+          $ref: "#/components/schemas/RejectionReason"
+        freeText:
+          type: string
+          maxLength: 127
+    CustomerLookup:
+      type: object
+      properties:
+        erpId:
+          type: string
+        type:
+          $ref: "#/components/schemas/CustomerType"
+        name1:
+          type: string
+        name2:
+          type: string
+        name3:
+          type: string
+        name4:
+          type: string
+        title:
+          type: string
+        streetAddress:
+          type: string
+        postalCode:
+          type: string
+        countryCode:
+          type: string
+        city:
+          type: string
+        contactDetails:
+          $ref: "#/components/schemas/CustomerContactDetails"
+    CustomerDetailsResponse:
+      type: object
+      properties:
+        customer:
+          $ref: "#/components/schemas/CustomerDetails"
+          expample:
+          - id: '123123'
+            erpId: '2234'
+            firstName: 'tester'
+            lastName: 'testowy'
+            nativeId: 'abcdef'
+            title: 'testing tests'
+            companyName: 'acme'
+            streetAddress: 'warszawska'
+            postalCode: '00-864'
+            countryCode: 'de'
+            city: 'berlin'
+            type: 'DELIVERY'
+            nativeStatus: 'IN_REVIEW'
+            state: 'ACTIVE'
+            nativeCreatedDate: '2018-07-12T13:43:13-04:00'
+            sourceSystem: 'SOURCESYSTEM'
+            rejectionReason: 'ADDRESS'
+            freeText: 'TEST TEXT ELSKDFJL ALSDKF SKDJF'
+    CustomerLookupResponse:
+      type: object
+      properties:
+        customerLookup:
+          $ref: "#/components/schemas/CustomerLookup"
+          expample:
+          - erpId: '2234'
+            customerNameFirst: 'tester'
+            customerNameSecond: 'testowy'
+            customerNameThird: 'testing tests'
+            customerNameFourth: 'acme'
+            streetAddress: 'warszawska'
+            postalCode: '00-864'
+            countryCode: 'de'
+            city: 'berlin'
+            type: 'DELIVERY'
+    CustomersResponse:
+      type: object
+      properties:
+        pageInfo:
+          $ref: "#/components/schemas/PageInfo"
+          example:
+          - pageNumber: 3
+            totalElements: 105
+            totalPages: 22
+        customers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Customer"
+          example:
+          - id: '31594'
+            status: null
+            comment: null
+            erpId: '1000095402'
+            type: null
+            companyName: Dr. Anke Essig
+            address: 'Malsch 76316 Einsteinstr 6'
+            state: ACTIVE
+            nativeCreatedDate: '2019-09-12T08:13:18-04:00'
+            sourceSystem: { name: 'Heiland' }
+          - id: '31590'
+            nativeStatus: null
+            comment: Any Metadata you need
+            erpId: '1000119155'
+            type: null
+            companyName: Kleintierpraxis Sandra Schuster
+            address: 'Meerbeck 31715 Volksdorf 17'
+            state: ACTIVE
+            nativeCreatedDate: '2018-07-12T13:43:13-04:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+          - id: '31591'
+            nativeStatus: null
+            comment: Any Metadata you need
+            erpId: '1000119155'
+            type: null
+            companyName: Kleintierpraxis Sandra Schuster
+            address: 'Meerbeck 31715 Volksdorf 17'
+            state: ACTIVE
+            nativeCreatedDate: '2018-07-12T13:43:13-04:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+          - id: '31592'
+            nativeStatus: null
+            comment: Any Metadata you need
+            erpId: '1000104725'
+            type: null
+            companyName: Tierarztpraxis Dr. Eva Krause
+            address: 'Weinstadt 71384 Buhlstraße 2'
+            state: ACTIVE
+            nativeCreatedDate: '2021-01-07T15:00:09-05:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+          - id: '31597'
+            nativeStatus: null
+            comment: null
+            erpId: '1000099508'
+            type: null
+            companyName: Tierarztpraxis Sandra Rüdiger & Markus Schmook
+            address: 'Worms 67551 Im Gehrchen 8'
+            state: ACTIVE
+            nativeCreatedDate: '2018-08-07T15:58:24-04:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+          - id: '31595'
+            nativeStatus: null
+            comment: null
+            erpId: '1000104401'
+            type: null
+            companyName: Tierarztpraxis für Kleintiere & Vögel
+            address: 'Hamburg 21031 Osterrade 36a'
+            state: ACTIVE
+            nativeCreatedDate: '2020-02-24T14:09:23-05:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+          - id: '31593'
+            nativeStatus: null
+            comment: null
+            erpId: '1000093496'
+            type: null
+            companyName: Tierärztliche Praxis Am Steinhübel
+            address: 'Saarwellingen 66793 Zum Steinhübel 32'
+            state: ACTIVE
+            nativeCreatedDate: '2019-05-05T15:24:02-04:00'
+            sourceSystem: { name: 'Heiland' }
+            rejectionReason: null
+        localizedCustomerStates:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerState"
+        localizedCustomerNativeStatuses:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerNativeStatus"
+        localizedCustomerTypes:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerType"
+        localizedRejectionReasons:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedRejectionReason"
+    ProductDetails:
+      type: object
+      properties:
+        id:
+          type: string
+        isVisible:
+          $ref: "#/components/schemas/BooleanValue"
+        availability:
+          $ref: "#/components/schemas/ProductAvailability"
+        statusId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        minimumOrderQuantity:
+          type: integer
+          format: int32
+        maximumOrderQuantity:
+          type: integer
+          format: int32
+        associatedProducts:
+          type: string
+        imageFilename:
+          type: string
+        imageFilepath:
+          type: string
+        imageUploadDate:
+          type: string
+          format: date-time
+        sourceSystem:
+          $ref: "#/components/schemas/SourceSystem"
+    ProductDetailsResponse:
+      type: object
+      properties:
+        product:
+          $ref: "#/components/schemas/ProductDetails"
+    SourceSystem:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
+    SourceSystemsResponse:
+      type: object
+      properties:
+        sourceSystems:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceSystem"
+    DictionariesResponse:
+      type: object
+      properties:
+        localizedCustomerStates:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerState"
+          example:
+          - state: "ACTIVE"
+            localizedState: "aktywny"
+          - state: "DELETED"
+            localizedState: "usuniety"
+        localizedCustomerNativeStatuses:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerNativeStatus"
+          example:
+          - nativeStatus: "IN_REVIEW"
+            localizedNativeStatus: "sprawdzanie"
+          - nativeStatus: "VALIDATED"
+            localizedNativeStatus: "ok"
+          - nativeStatus: "BLOCKED"
+            localizedNativeStatus: "zablokowany"
+        localizedCustomerTypes:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedCustomerType"
+        localizedRejectionReasons:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedRejectionReason"
+        localizedProductAvailabilities:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedProductAvailability"
+        localizedBooleanValues:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedBooleanValue"
+          example:
+          - value: "TRUE"
+            localizedValue: "tak"
+          - value: "FALSE"
+            localizedValue: "nie"
+        localizedErrorCodes:
+          type: array
+          items:
+            $ref: "#/components/schemas/LocalizedErrorCode"
+    Audit:
+      type: object
+      properties:
+        dataSet:
+          $ref: '#/components/schemas/AuditDataSet'
+        header:
+          type: string
+        message:
+          type: string
+        initiator:
+          type: string
+        date:
+          type: string
+          format: date-time
+    AuditsResponse:
+      type: object
+      properties:
+        pageInfo:
+          $ref: "#/components/schemas/PageInfo"
+        audits:
+          type: array
+          items:
+            $ref: "#/components/schemas/Audit"
+          example:
+          - dataSet: "PRODUCT"
+            header: "100000253|advOcid 180LMASDFLSDF ALKSDJFQOG"
+            message: "test"
+            initiator: "test"
+            date: '2019-09-12T08:13:18-04:00'
+          - dataSet: "CUSTOMER"
+            header: "6000104325|Dr. Piotr R2."
+            message: "Customer has been updated.\nCUSTOMER_STATUS_REASON: ->OTHER \nFREE_TEXT_LOCAL: ->Test"
+            initiator: "ETL"
+            date: "2021-11-17T08:41:24-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been inserted."
+            initiator: "ETL"
+            date: "2021-11-17T09:03:05-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been updated.CUSTOMER_STATUS_LOCAL: VALIDATED->BLOCKED CUSTOMER_STATUS_REASON: >OTHERFREE_TEXT_LOCAL: ->Test "
+            initiator: "ETL"
+            date: "2021-11-17T09:07:33-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been updated.CUSTOMER_STATUS_REASON: OTHER->TEST "
+            initiator: "ETL"
+            date: "2021-11-17T09:08:21-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been sent to WDT"
+            initiator: "ETL"
+            date: "2021-11-17T09:18:47-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been updated"
+            initiator: "mock-user"
+            date: "2021-11-17T09:35:42-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000107003|Kleintierpraxis3"
+            message: "Customer has been updated.CUSTOMER_STATUS_LOCAL: IN_REVIEW->VERIFIED "
+            initiator: "ETL"
+            date: "2021-11-17T09:44:48-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000107003|Kleintierpraxis3"
+            message: "Customer has been updated.CUSTOMER_STATUS_LOCAL: VERIFIED->IN_REVIEW "
+            initiator: "ETL"
+            date: "2021-11-17T09:45:01-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104346|Dr. Piotr R3."
+            message: "Customer has been updated"
+            initiator: "ETL"
+            date: "2021-11-17T10:05:34-05:00"
+          - dataSet: "CUSTOMER"
+            header: "6000104344|Dr. Piotr R."
+            message: "Customer has been sent to WDT"
+            initiator: "ETL"
+            date: "2021-11-18T07:32:18-05:00"
+    User:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - emailAddress
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        emailAddress:
+          type: string
+    AuthenticatedUserResponse:
+      type: object
+      properties:
+        user:
+          $ref: "#/components/schemas/User"
+    SortCustomersBy:
+      type: string
+      enum: &SortCustomersBy
+        - NATIVE_STATUS
+        - ERP_ID
+        - COMPANY_NAME
+        - ADDRESS
+        - STATE
+        - TYPE
+        - NATIVE_CREATED_DATE
+        - SOURCE
+        - REJECTION_REASON
+    SortProductsBy:
+      type: string
+      enum: &SortProductsBy
+        - IS_VISIBLE
+        - AVAILABILITY
+        - PRODUCT_ID
+        - DESCRIPTION
+        - MINIMUM_ORDER_QUANTITY
+        - MAXIMUM_ORDER_QUANTITY
+        - HAS_MEDIA
+        - SOURCE
+    SortAuditsBy:
+      type: string
+      enum: &SortAuditsBy
+        - DATA_SET
+        - HEADER
+        - MESSAGE
+        - INITIATOR
+        - DATE
+    SortDirection:
+      type: string
+      enum: &SortDirection
+        - ASC
+        - DESC
+    SearchCustomersBy:
+      type: object
+      properties:
+        field:
+          $ref: "#/components/schemas/SearchCustomersByField"
+        operation:
+          $ref: "#/components/schemas/SearchByOperation"
+        values:
+          type: array
+          items:
+            type: string
+    SearchProductsBy:
+      type: object
+      properties:
+        field:
+          $ref: "#/components/schemas/SearchProductsByField"
+        operation:
+          $ref: "#/components/schemas/SearchByOperation"
+        values:
+          type: array
+          items:
+            type: string
+    SearchAuditsBy:
+      type: object
+      properties:
+        field:
+          $ref: "#/components/schemas/SearchAuditsByField"
+        operation:
+          $ref: "#/components/schemas/SearchByOperation"
+        values:
+          type: array
+          items:
+            type: string
+    SearchByOperation:
+      type: string
+      enum: &SearchByOperation
+        - IN
+        - LIKE
+    SearchCustomersByField:
+      type: string
+      enum: &SearchCustomersByField
+        - NATIVE_STATUS
+        - ERP_ID
+        - COMPANY_NAME
+        - ADDRESS
+        - STATE
+        - TYPE
+        - NATIVE_CREATED_DATE
+        - SOURCE
+        - REJECTION_REASON
+    SearchProductsByField:
+      type: string
+      enum: &SearchProductsByField
+        - IS_VISIBLE
+        - AVAILABILITY
+        - PRODUCT_ID
+        - DESCRIPTION
+        - MINIMUM_ORDER_QUANTITY
+        - MAXIMUM_ORDER_QUANTITY
+        - HAS_MEDIA
+        - SOURCE
+    SearchAuditsByField:
+      type: string
+      enum: &SearchAuditsByField
+        - DATA_SET
+        - HEADER
+        - MESSAGE
+        - INITIATOR
+        - DATE
+    PageInfo:
+      type: object
+      properties:
+        pageNumber:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int32
+    CustomerNativeStatus:
+      type: string
+      enum: &CustomerNativeStatus
+        - IN_REVIEW
+        - VALIDATED
+        - BLOCKED
+    LocalizedCustomerNativeStatus:
+      type: object
+      properties:
+        nativeStatus:
+          $ref: "#/components/schemas/CustomerNativeStatus"
+        localizedNativeStatus:
+          type: string
+    LocalizedCustomerType:
+      type: object
+      properties:
+        type:
+          $ref: "#/components/schemas/CustomerType"
+        localizedType:
+          type: string
+    CustomerContactDetails:
+      type: object
+      properties:
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        searchTerms:
+          type: string
+    CustomerState:
+      type: string
+      enum: &CustomerState
+        - ACTIVE
+        - DELETED
+    LocalizedCustomerState:
+      type: object
+      properties:
+        state:
+          $ref: "#/components/schemas/CustomerState"
+        localizedState:
+          type: string
+    CustomerType:
+      type: string
+      enum: &CustomerType
+        - DELIVERY
+        - VET_PRACTICE
+        - OTHER
+    RejectionReason:
+      type: string
+      enum: &RejectionReason
+        - ADDRESS
+        - NAME
+        - OTHER
+        - REFERENCE
+    LocalizedRejectionReason:
+      type: object
+      properties:
+        rejectionReason:
+          $ref: "#/components/schemas/RejectionReason"
+        localizedRejectionReason:
+          type: string
+    ProductAvailability:
+      type: string
+      enum: &ProductAvailability
+        - AVAILABLE
+        - NOT_AVAILABLE
+        - SHORT_TERM_NOT_AVAILABLE
+        - MEDIUM_TERM_NOT_AVAILABLE
+        - LONG_TERM_NOT_AVAILABLE
+    NullableProductAvailability:
+      nullable: true
+      type: string
+      enum: &NullableProductAvailability
+        - AVAILABLE
+        - NOT_AVAILABLE
+        - SHORT_TERM_NOT_AVAILABLE
+        - MEDIUM_TERM_NOT_AVAILABLE
+        - LONG_TERM_NOT_AVAILABLE
+    LocalizedProductAvailability:
+      type: object
+      properties:
+        availability:
+          $ref: "#/components/schemas/ProductAvailability"
+        localizedAvailability:
+          type: string
+    BooleanValue:
+      type: string
+      enum: &BooleanValue
+        - "TRUE"
+        - "FALSE"
+    NullableBooleanValue:
+      nullable: true
+      enum: &NullableBooleanValue
+        - "TRUE"
+        - "FALSE"
+    LocalizedBooleanValue:
+      type: object
+      properties:
+        value:
+          $ref: "#/components/schemas/BooleanValue"
+        localizedValue:
+          type: string
+    AuditDataSet:
+      type: string
+      enum: &AuditDataSet
+        - CUSTOMER
+        - PRODUCT
+    Language:
+      type: string
+      enum: &Language
+        - DE
+    Error:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        code:
+          $ref: "#/components/schemas/ErrorCode"
+        message:
+          type: string
+      required:
+        - date
+        - code
+        - message
+    ErrorCode:
+      type: string
+      enum: &ErrorCode
+        - INTERNAL_SERVER_ERROR
+        - BAD_REQUEST
+        - FORBIDDEN
+        - NOT_FOUND
+        - CONFLICT
+        - INCORRECT_FREE_TEXT_VALUE
+    LocalizedErrorCode:
+      type: object
+      properties:
+        errorCode:
+          $ref: "#/components/schemas/ErrorCode"
+        localizedErrorCode:
+          type: string

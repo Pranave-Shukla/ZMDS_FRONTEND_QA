@@ -1,0 +1,1 @@
+export { apiConfiguration } from './sdkConfiguration'
